@@ -19,6 +19,17 @@
 		436E26841917A3BF004D4B03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436E266C1917A3BF004D4B03 /* UIKit.framework */; };
 		436E268C1917A3BF004D4B03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 436E268A1917A3BF004D4B03 /* InfoPlist.strings */; };
 		436E268E1917A3BF004D4B03 /* LightSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 436E268D1917A3BF004D4B03 /* LightSearchTests.m */; };
+		436E269D1917A42D004D4B03 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 436E26981917A42D004D4B03 /* Shader.fsh */; };
+		436E269E1917A42D004D4B03 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 436E26991917A42D004D4B03 /* Shader.vsh */; };
+		436E269F1917A42D004D4B03 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436E269B1917A42D004D4B03 /* ViewController.m */; };
+		436E26A01917A42D004D4B03 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 436E269C1917A42D004D4B03 /* ViewController.xib */; };
+		436E26A21917A475004D4B03 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436E26A11917A475004D4B03 /* GLKit.framework */; };
+		436E26A41917A9F2004D4B03 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436E26A31917A9F2004D4B03 /* opencv2.framework */; };
+		436E26AB1917AB6F004D4B03 /* quasisampler_prototype.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 436E26A81917AB6F004D4B03 /* quasisampler_prototype.cpp */; };
+		43F7A3CB1918D7E200C7FD4F /* LightSamplingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F7A3C91918D7E200C7FD4F /* LightSamplingViewController.m */; };
+		43F7A3CC1918D7E200C7FD4F /* LightSamplingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43F7A3CA1918D7E200C7FD4F /* LightSamplingViewController.xib */; };
+		43F7A3CF1918D7FC00C7FD4F /* hdr1.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 43F7A3CD1918D7FC00C7FD4F /* hdr1.bmp */; };
+		43F7A3D31918E84200C7FD4F /* Penrose.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F7A3D21918E84200C7FD4F /* Penrose.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +59,21 @@
 		436E26891917A3BF004D4B03 /* LightSearchTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LightSearchTests-Info.plist"; sourceTree = "<group>"; };
 		436E268B1917A3BF004D4B03 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		436E268D1917A3BF004D4B03 /* LightSearchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LightSearchTests.m; sourceTree = "<group>"; };
+		436E26981917A42D004D4B03 /* Shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.fsh; sourceTree = "<group>"; };
+		436E26991917A42D004D4B03 /* Shader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.vsh; sourceTree = "<group>"; };
+		436E269A1917A42D004D4B03 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		436E269B1917A42D004D4B03 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		436E269C1917A42D004D4B03 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		436E26A11917A475004D4B03 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		436E26A31917A9F2004D4B03 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		436E26A81917AB6F004D4B03 /* quasisampler_prototype.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = quasisampler_prototype.cpp; sourceTree = "<group>"; };
+		436E26A91917AB6F004D4B03 /* quasisampler_prototype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = quasisampler_prototype.h; sourceTree = "<group>"; };
+		43F7A3C81918D7E200C7FD4F /* LightSamplingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LightSamplingViewController.h; path = LightSampling/LightSamplingViewController.h; sourceTree = "<group>"; };
+		43F7A3C91918D7E200C7FD4F /* LightSamplingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LightSamplingViewController.m; path = LightSampling/LightSamplingViewController.m; sourceTree = "<group>"; };
+		43F7A3CA1918D7E200C7FD4F /* LightSamplingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LightSamplingViewController.xib; path = LightSampling/LightSamplingViewController.xib; sourceTree = "<group>"; };
+		43F7A3CD1918D7FC00C7FD4F /* hdr1.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = hdr1.bmp; sourceTree = "<group>"; };
+		43F7A3D11918E84200C7FD4F /* Penrose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Penrose.h; sourceTree = "<group>"; };
+		43F7A3D21918E84200C7FD4F /* Penrose.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Penrose.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +81,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				436E26A21917A475004D4B03 /* GLKit.framework in Frameworks */,
 				436E266B1917A3BF004D4B03 /* CoreGraphics.framework in Frameworks */,
 				436E266D1917A3BF004D4B03 /* UIKit.framework in Frameworks */,
+				436E26A41917A9F2004D4B03 /* opencv2.framework in Frameworks */,
 				436E26691917A3BF004D4B03 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,6 +124,8 @@
 		436E26671917A3BF004D4B03 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				436E26A31917A9F2004D4B03 /* opencv2.framework */,
+				436E26A11917A475004D4B03 /* GLKit.framework */,
 				436E26681917A3BF004D4B03 /* Foundation.framework */,
 				436E266A1917A3BF004D4B03 /* CoreGraphics.framework */,
 				436E266C1917A3BF004D4B03 /* UIKit.framework */,
@@ -107,8 +137,14 @@
 		436E266E1917A3BF004D4B03 /* LightSearch */ = {
 			isa = PBXGroup;
 			children = (
+				43F7A3C71918D7BB00C7FD4F /* LightSampling */,
+				436E26A51917AB6F004D4B03 /* Penrose */,
+				436E26971917A42D004D4B03 /* Shaders */,
 				436E26771917A3BF004D4B03 /* AppDelegate.h */,
 				436E26781917A3BF004D4B03 /* AppDelegate.m */,
+				436E269A1917A42D004D4B03 /* ViewController.h */,
+				436E269B1917A42D004D4B03 /* ViewController.m */,
+				436E269C1917A42D004D4B03 /* ViewController.xib */,
 				436E267A1917A3BF004D4B03 /* Images.xcassets */,
 				436E266F1917A3BF004D4B03 /* Supporting Files */,
 			);
@@ -122,6 +158,7 @@
 				436E26711917A3BF004D4B03 /* InfoPlist.strings */,
 				436E26741917A3BF004D4B03 /* main.m */,
 				436E26761917A3BF004D4B03 /* LightSearch-Prefix.pch */,
+				43F7A3CD1918D7FC00C7FD4F /* hdr1.bmp */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -142,6 +179,36 @@
 				436E268A1917A3BF004D4B03 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		436E26971917A42D004D4B03 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				436E26981917A42D004D4B03 /* Shader.fsh */,
+				436E26991917A42D004D4B03 /* Shader.vsh */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		436E26A51917AB6F004D4B03 /* Penrose */ = {
+			isa = PBXGroup;
+			children = (
+				436E26A91917AB6F004D4B03 /* quasisampler_prototype.h */,
+				436E26A81917AB6F004D4B03 /* quasisampler_prototype.cpp */,
+				43F7A3D11918E84200C7FD4F /* Penrose.h */,
+				43F7A3D21918E84200C7FD4F /* Penrose.m */,
+			);
+			path = Penrose;
+			sourceTree = "<group>";
+		};
+		43F7A3C71918D7BB00C7FD4F /* LightSampling */ = {
+			isa = PBXGroup;
+			children = (
+				43F7A3C81918D7E200C7FD4F /* LightSamplingViewController.h */,
+				43F7A3C91918D7E200C7FD4F /* LightSamplingViewController.m */,
+				43F7A3CA1918D7E200C7FD4F /* LightSamplingViewController.xib */,
+			);
+			name = LightSampling;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,8 +286,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43F7A3CC1918D7E200C7FD4F /* LightSamplingViewController.xib in Resources */,
+				436E26A01917A42D004D4B03 /* ViewController.xib in Resources */,
+				436E269E1917A42D004D4B03 /* Shader.vsh in Resources */,
+				436E269D1917A42D004D4B03 /* Shader.fsh in Resources */,
 				436E26731917A3BF004D4B03 /* InfoPlist.strings in Resources */,
 				436E267B1917A3BF004D4B03 /* Images.xcassets in Resources */,
+				43F7A3CF1918D7FC00C7FD4F /* hdr1.bmp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +311,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43F7A3D31918E84200C7FD4F /* Penrose.m in Sources */,
+				436E26AB1917AB6F004D4B03 /* quasisampler_prototype.cpp in Sources */,
+				43F7A3CB1918D7E200C7FD4F /* LightSamplingViewController.m in Sources */,
+				436E269F1917A42D004D4B03 /* ViewController.m in Sources */,
 				436E26791917A3BF004D4B03 /* AppDelegate.m in Sources */,
 				436E26751917A3BF004D4B03 /* main.m in Sources */,
 			);
@@ -357,6 +433,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LightSearch/LightSearch-Prefix.pch";
 				INFOPLIST_FILE = "LightSearch/LightSearch-Info.plist";
@@ -370,6 +450,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LightSearch/LightSearch-Prefix.pch";
 				INFOPLIST_FILE = "LightSearch/LightSearch-Info.plist";
@@ -437,6 +521,7 @@
 				436E26931917A3BF004D4B03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		436E26941917A3BF004D4B03 /* Build configuration list for PBXNativeTarget "LightSearchTests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +530,7 @@
 				436E26961917A3BF004D4B03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
