@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		431468C2191BB6C000F09310 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431468C1191BB6C000F09310 /* AVFoundation.framework */; };
+		431468C4191BB6CC00F09310 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431468C3191BB6CC00F09310 /* Accelerate.framework */; };
+		431468C6191BB6E900F09310 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431468C5191BB6E900F09310 /* AssetsLibrary.framework */; };
+		431468C8191BB6F600F09310 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431468C7191BB6F600F09310 /* CoreImage.framework */; };
+		431468CA191BB70200F09310 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431468C9191BB70200F09310 /* CoreMedia.framework */; };
+		431468CC191BB70C00F09310 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431468CB191BB70C00F09310 /* CoreVideo.framework */; };
+		431468CE191BBC6100F09310 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431468CD191BBC6100F09310 /* QuartzCore.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		431468D3191BBF0500F09310 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 431468D1191BBF0500F09310 /* ViewController.xib */; };
+		431468D4191BC18400F09310 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 431468D0191BBF0500F09310 /* ViewController.m */; };
+		431468D5191BC29B00F09310 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436E26A11917A475004D4B03 /* GLKit.framework */; };
+		431468DB191BC3E200F09310 /* Penrose.mm in Sources */ = {isa = PBXBuildFile; fileRef = 431468D8191BC3E200F09310 /* Penrose.mm */; };
+		431468DC191BC3E200F09310 /* quasisampler_prototype.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 431468D9191BC3E200F09310 /* quasisampler_prototype.cpp */; };
 		436E26691917A3BF004D4B03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436E26681917A3BF004D4B03 /* Foundation.framework */; };
 		436E266B1917A3BF004D4B03 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436E266A1917A3BF004D4B03 /* CoreGraphics.framework */; };
 		436E266D1917A3BF004D4B03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436E266C1917A3BF004D4B03 /* UIKit.framework */; };
@@ -21,15 +33,10 @@
 		436E268E1917A3BF004D4B03 /* LightSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 436E268D1917A3BF004D4B03 /* LightSearchTests.m */; };
 		436E269D1917A42D004D4B03 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 436E26981917A42D004D4B03 /* Shader.fsh */; };
 		436E269E1917A42D004D4B03 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 436E26991917A42D004D4B03 /* Shader.vsh */; };
-		436E269F1917A42D004D4B03 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436E269B1917A42D004D4B03 /* ViewController.m */; };
-		436E26A01917A42D004D4B03 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 436E269C1917A42D004D4B03 /* ViewController.xib */; };
-		436E26A21917A475004D4B03 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436E26A11917A475004D4B03 /* GLKit.framework */; };
 		436E26A41917A9F2004D4B03 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436E26A31917A9F2004D4B03 /* opencv2.framework */; };
-		436E26AB1917AB6F004D4B03 /* quasisampler_prototype.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 436E26A81917AB6F004D4B03 /* quasisampler_prototype.cpp */; };
 		43F7A3CB1918D7E200C7FD4F /* LightSamplingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F7A3C91918D7E200C7FD4F /* LightSamplingViewController.m */; };
 		43F7A3CC1918D7E200C7FD4F /* LightSamplingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43F7A3CA1918D7E200C7FD4F /* LightSamplingViewController.xib */; };
 		43F7A3CF1918D7FC00C7FD4F /* hdr1.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 43F7A3CD1918D7FC00C7FD4F /* hdr1.bmp */; };
-		43F7A3D31918E84200C7FD4F /* Penrose.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F7A3D21918E84200C7FD4F /* Penrose.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +50,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		431468C1191BB6C000F09310 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		431468C3191BB6CC00F09310 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		431468C5191BB6E900F09310 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		431468C7191BB6F600F09310 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		431468C9191BB70200F09310 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		431468CB191BB70C00F09310 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		431468CD191BBC6100F09310 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		431468CF191BBF0500F09310 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		431468D0191BBF0500F09310 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		431468D1191BBF0500F09310 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		431468D7191BC3E200F09310 /* Penrose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Penrose.h; sourceTree = "<group>"; };
+		431468D8191BC3E200F09310 /* Penrose.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Penrose.mm; sourceTree = "<group>"; };
+		431468D9191BC3E200F09310 /* quasisampler_prototype.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = quasisampler_prototype.cpp; sourceTree = "<group>"; };
+		431468DA191BC3E200F09310 /* quasisampler_prototype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = quasisampler_prototype.h; sourceTree = "<group>"; };
 		436E26651917A3BF004D4B03 /* LightSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LightSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		436E26681917A3BF004D4B03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		436E266A1917A3BF004D4B03 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -61,19 +82,12 @@
 		436E268D1917A3BF004D4B03 /* LightSearchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LightSearchTests.m; sourceTree = "<group>"; };
 		436E26981917A42D004D4B03 /* Shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.fsh; sourceTree = "<group>"; };
 		436E26991917A42D004D4B03 /* Shader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.vsh; sourceTree = "<group>"; };
-		436E269A1917A42D004D4B03 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		436E269B1917A42D004D4B03 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		436E269C1917A42D004D4B03 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		436E26A11917A475004D4B03 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		436E26A31917A9F2004D4B03 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
-		436E26A81917AB6F004D4B03 /* quasisampler_prototype.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = quasisampler_prototype.cpp; sourceTree = "<group>"; };
-		436E26A91917AB6F004D4B03 /* quasisampler_prototype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = quasisampler_prototype.h; sourceTree = "<group>"; };
 		43F7A3C81918D7E200C7FD4F /* LightSamplingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LightSamplingViewController.h; path = LightSampling/LightSamplingViewController.h; sourceTree = "<group>"; };
 		43F7A3C91918D7E200C7FD4F /* LightSamplingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LightSamplingViewController.m; path = LightSampling/LightSamplingViewController.m; sourceTree = "<group>"; };
 		43F7A3CA1918D7E200C7FD4F /* LightSamplingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LightSamplingViewController.xib; path = LightSampling/LightSamplingViewController.xib; sourceTree = "<group>"; };
 		43F7A3CD1918D7FC00C7FD4F /* hdr1.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = hdr1.bmp; sourceTree = "<group>"; };
-		43F7A3D11918E84200C7FD4F /* Penrose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Penrose.h; sourceTree = "<group>"; };
-		43F7A3D21918E84200C7FD4F /* Penrose.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Penrose.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +95,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				436E26A21917A475004D4B03 /* GLKit.framework in Frameworks */,
+				431468D5191BC29B00F09310 /* GLKit.framework in Frameworks */,
+				431468CE191BBC6100F09310 /* QuartzCore.framework in Frameworks */,
+				431468CC191BB70C00F09310 /* CoreVideo.framework in Frameworks */,
+				431468CA191BB70200F09310 /* CoreMedia.framework in Frameworks */,
+				431468C8191BB6F600F09310 /* CoreImage.framework in Frameworks */,
+				431468C6191BB6E900F09310 /* AssetsLibrary.framework in Frameworks */,
+				431468C4191BB6CC00F09310 /* Accelerate.framework in Frameworks */,
+				431468C2191BB6C000F09310 /* AVFoundation.framework in Frameworks */,
 				436E266B1917A3BF004D4B03 /* CoreGraphics.framework in Frameworks */,
 				436E266D1917A3BF004D4B03 /* UIKit.framework in Frameworks */,
 				436E26A41917A9F2004D4B03 /* opencv2.framework in Frameworks */,
@@ -102,6 +123,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		431468D6191BC3E200F09310 /* Penrose */ = {
+			isa = PBXGroup;
+			children = (
+				431468D7191BC3E200F09310 /* Penrose.h */,
+				431468D8191BC3E200F09310 /* Penrose.mm */,
+				431468D9191BC3E200F09310 /* quasisampler_prototype.cpp */,
+				431468DA191BC3E200F09310 /* quasisampler_prototype.h */,
+			);
+			path = Penrose;
+			sourceTree = "<group>";
+		};
 		436E265C1917A3BF004D4B03 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +156,13 @@
 		436E26671917A3BF004D4B03 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				431468CD191BBC6100F09310 /* QuartzCore.framework */,
+				431468CB191BB70C00F09310 /* CoreVideo.framework */,
+				431468C9191BB70200F09310 /* CoreMedia.framework */,
+				431468C7191BB6F600F09310 /* CoreImage.framework */,
+				431468C5191BB6E900F09310 /* AssetsLibrary.framework */,
+				431468C3191BB6CC00F09310 /* Accelerate.framework */,
+				431468C1191BB6C000F09310 /* AVFoundation.framework */,
 				436E26A31917A9F2004D4B03 /* opencv2.framework */,
 				436E26A11917A475004D4B03 /* GLKit.framework */,
 				436E26681917A3BF004D4B03 /* Foundation.framework */,
@@ -137,14 +176,14 @@
 		436E266E1917A3BF004D4B03 /* LightSearch */ = {
 			isa = PBXGroup;
 			children = (
+				431468D6191BC3E200F09310 /* Penrose */,
 				43F7A3C71918D7BB00C7FD4F /* LightSampling */,
-				436E26A51917AB6F004D4B03 /* Penrose */,
 				436E26971917A42D004D4B03 /* Shaders */,
 				436E26771917A3BF004D4B03 /* AppDelegate.h */,
 				436E26781917A3BF004D4B03 /* AppDelegate.m */,
-				436E269A1917A42D004D4B03 /* ViewController.h */,
-				436E269B1917A42D004D4B03 /* ViewController.m */,
-				436E269C1917A42D004D4B03 /* ViewController.xib */,
+				431468CF191BBF0500F09310 /* ViewController.h */,
+				431468D0191BBF0500F09310 /* ViewController.m */,
+				431468D1191BBF0500F09310 /* ViewController.xib */,
 				436E267A1917A3BF004D4B03 /* Images.xcassets */,
 				436E266F1917A3BF004D4B03 /* Supporting Files */,
 			);
@@ -188,17 +227,6 @@
 				436E26991917A42D004D4B03 /* Shader.vsh */,
 			);
 			path = Shaders;
-			sourceTree = "<group>";
-		};
-		436E26A51917AB6F004D4B03 /* Penrose */ = {
-			isa = PBXGroup;
-			children = (
-				436E26A91917AB6F004D4B03 /* quasisampler_prototype.h */,
-				436E26A81917AB6F004D4B03 /* quasisampler_prototype.cpp */,
-				43F7A3D11918E84200C7FD4F /* Penrose.h */,
-				43F7A3D21918E84200C7FD4F /* Penrose.m */,
-			);
-			path = Penrose;
 			sourceTree = "<group>";
 		};
 		43F7A3C71918D7BB00C7FD4F /* LightSampling */ = {
@@ -286,8 +314,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				431468D3191BBF0500F09310 /* ViewController.xib in Resources */,
 				43F7A3CC1918D7E200C7FD4F /* LightSamplingViewController.xib in Resources */,
-				436E26A01917A42D004D4B03 /* ViewController.xib in Resources */,
 				436E269E1917A42D004D4B03 /* Shader.vsh in Resources */,
 				436E269D1917A42D004D4B03 /* Shader.fsh in Resources */,
 				436E26731917A3BF004D4B03 /* InfoPlist.strings in Resources */,
@@ -311,12 +339,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43F7A3D31918E84200C7FD4F /* Penrose.m in Sources */,
-				436E26AB1917AB6F004D4B03 /* quasisampler_prototype.cpp in Sources */,
+				431468D4191BC18400F09310 /* ViewController.m in Sources */,
 				43F7A3CB1918D7E200C7FD4F /* LightSamplingViewController.m in Sources */,
-				436E269F1917A42D004D4B03 /* ViewController.m in Sources */,
+				431468DB191BC3E200F09310 /* Penrose.mm in Sources */,
 				436E26791917A3BF004D4B03 /* AppDelegate.m in Sources */,
 				436E26751917A3BF004D4B03 /* main.m in Sources */,
+				431468DC191BC3E200F09310 /* quasisampler_prototype.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +465,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LightSearch/LightSearch-Prefix.pch";
 				INFOPLIST_FILE = "LightSearch/LightSearch-Info.plist";
@@ -454,6 +483,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LightSearch/LightSearch-Prefix.pch";
 				INFOPLIST_FILE = "LightSearch/LightSearch-Info.plist";

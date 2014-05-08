@@ -7,15 +7,28 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <opencv2/highgui/ios.h>
 #include "quasisampler_prototype.h"
 
 @interface Radiance : NSObject
 
-@property(nonatomic, weak)	float	R;
-@property(nonatomic, weak)	float	G;
-@property(nonatomic, weak)	float	B;
-@property(nonatomic, weak)	float	Intensity;
+@property(nonatomic, assign)	float	R;
+@property(nonatomic, assign)	float	G;
+@property(nonatomic, assign)	float	B;
+@property(nonatomic, assign)	float	Intensity;
 
+@end
+
+
+@interface Point2DWrapped : NSObject
+{
+	Point2D	*	_point2d;
+}
+
+@property(nonatomic, assign)	double	x;
+@property(nonatomic, assign)	double	y;
+
+- (id)initWithPointX:(double)x Y:(double)y;
 @end
 
 
@@ -26,14 +39,14 @@
 	float			m_sumIntensity;
 }
 
-@property(nonatomic, weak)	int			width;
-@property(nonatomic, weak)	int			height;
-@property(nonatomic, weak)	NSArray	*	sampledPoints;
-@property(nonatomic, weak)	NSArray	*	mergedPoints;
+@property(nonatomic, assign)	int						width;
+@property(nonatomic, assign)	int						height;
+@property(nonatomic, strong)	NSMutableArray		*	sampledPoints;
+@property(nonatomic, strong)	NSMutableArray		*	mergedPoints;
+@property(nonatomic, assign)	IplImage			*	sourceImage;
 
-- (void)initArray(int w, int h);
-- (void)setRadianceMapWithEXP(int w, int h, unsigned char *src, unsigned char *dst);
-- (void)gridSampling(int numWidth, int numHeight);
-- (void)mergeSampledPoints(float minDistance);
+- (void)setRadianceMapWithEXP:(int)w height:(int)h source:(unsigned char *)src dist:(unsigned char *)dst;
+- (void)gridSampling:(int)numWidth height:(int) numHeight;
+- (void)mergeSampledPoints:(float)minDistance;
 
 @end
