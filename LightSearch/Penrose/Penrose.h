@@ -27,6 +27,9 @@
 
 @property(nonatomic, assign)	double	x;
 @property(nonatomic, assign)	double	y;
+@property(nonatomic, assign)	float	sumX;
+@property(nonatomic, assign)	float	sumY;
+@property(nonatomic, assign)	int		count;
 
 - (id)initWithPointX:(double)x Y:(double)y;
 @end
@@ -41,6 +44,7 @@
 
 @property(nonatomic, assign)	int						width;
 @property(nonatomic, assign)	int						height;
+@property(nonatomic, strong)	NSMutableArray		*	points;
 @property(nonatomic, strong)	NSMutableArray		*	sampledPoints;
 @property(nonatomic, strong)	NSMutableArray		*	mergedPoints;
 @property(nonatomic, assign)	IplImage			*	sourceImage;

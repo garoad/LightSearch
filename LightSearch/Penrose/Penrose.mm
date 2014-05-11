@@ -20,6 +20,21 @@
 	_point2d->y = y;
 }
 
+- (void)setSumX:(float)sumX
+{
+	_point2d->sumX = sumX;
+}
+
+- (void)setSumY:(float)sumY
+{
+	_point2d->sumY = sumY;
+}
+
+- (void)setCount:(int)count
+{
+	_point2d->count = count;
+}
+
 - (double)x
 {
 	return _point2d->x;
@@ -28,6 +43,21 @@
 - (double)y
 {
 	return _point2d->y;
+}
+
+- (float)sumX
+{
+	return _point2d->sumX;
+}
+
+- (float)sumY
+{
+	return _point2d->sumY;
+}
+
+- (int)count
+{
+	return _point2d->count;
 }
 
 - (id)initWithPointX:(double)x Y:(double)y
@@ -43,7 +73,7 @@
 @end
 
 @implementation Penrose
-@synthesize width = _width, height = _height, sampledPoints = _sampledPoints, mergedPoints = _mergedPoints, sourceImage = _sourceImage;
+@synthesize width = _width, height = _height, points = _points, sampledPoints = _sampledPoints, mergedPoints = _mergedPoints, sourceImage = _sourceImage;
 
 //penrose radiance mapping with exponential function.
 - (void)setRadianceMapWithEXP:(int)w height:(int)h source:(unsigned char *)src dist:(unsigned char *)dst
@@ -145,9 +175,89 @@
 	}
 }
 
+- (float)getDistance:(Point2DWrapped *)a to:(Point2DWrapped *)b
+{
+	float dist = 0.0;
+	float diffX, diffY;
+	diffX = diffY = 0.0;
+	diffX = (b.x - a.x) * (b.x - a.x);
+	diffY = (b.y - a.y) * (b.y - a.y);
+	dist = sqrt(diffX + diffY);
+	return dist;
+}
+
+- (int)getMinDistIndex:(Point2DWrapped *)srcPt
+{
+	float bestDist = _width;
+	float tempDist = 0.0;
+	Point2DWrapped	* curPt = [[Point2DWrapped alloc] initWithPointX:0 Y:0];
+	int bestIndex = 0;
+	for(int i=0; i<[_mergedPoints count]; i++){
+		
+		curPt = [_mergedPoints objectAtIndex:i];
+		tempDist = [self getDistance:srcPt to:curPt];
+		if(tempDist < bestDist){
+			bestDist = tempDist;
+			bestIndex = i;
+		}
+	}
+	
+	return bestIndex;
+}
+
 - (void)mergeSampledPoints:(float)minDistance
 {
+	if([_mergedPoints count] != 0)
+		_mergedPoints = [NSMutableArray new];
 	
+	Point2DWrapped	*	curPt;
+	Point2DWrapped	*	curMergePt;
+	
+	float diffX, diffY = 0.0;
+	int minIndex;
+	
+	for(int i=0; i<[_sampledPoints count]; i++){
+		
+		curPt = [_sampledPoints objectAtIndex:i];
+		
+		if(i == 0){		//start
+			curPt.count = 0;
+			[_mergedPoints addObject:curPt];
+		}
+		else{
+			minIndex = [self getMinDistIndex:curPt];
+			curMergePt = [_mergedPoints objectAtIndex:minIndex];
+			diffX = abs(curPt.x - curMergePt.x);
+			diffY = abs(curPt.y - curMergePt.y);
+			
+			if(diffX < minDistance && diffY < minDistance*0.5)
+			{
+				//merged Point
+				curMergePt.sumX += curPt.x;
+				curMergePt.sumY += curPt.y;
+				curMergePt.count++;
+				curMergePt.x = curMergePt.sumX / curMergePt.count;
+				curMergePt.y = curMergePt.sumY / curMergePt.count;
+				
+			}
+			else{
+				curPt.count = 0;
+				[_mergedPoints addObject:curPt];
+			}
+		}
+	}
+	
+	//final points
+	if ([_points count] != 0)
+		_points = [NSMutableArray new];
+	
+	for (int i=0; i<[_mergedPoints count]; i++)
+	{
+		curPt = [_mergedPoints objectAtIndex:i];
+		
+		if (curPt.count >= 3)
+			[_points addObject:curPt];
+	}
 }
 
 

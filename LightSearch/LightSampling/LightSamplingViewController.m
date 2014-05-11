@@ -7,6 +7,7 @@
 //
 
 #import "LightSamplingViewController.h"
+#import "Penrose.h"
 
 @interface LightSamplingViewController ()
 
