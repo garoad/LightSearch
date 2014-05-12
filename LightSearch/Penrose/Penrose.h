@@ -37,9 +37,9 @@
 
 @interface Penrose : NSObject
 {
-	NSArray		*	m_radiance;
-	float		*	m_data;
-	float			m_sumIntensity;
+	NSMutableArray	*	m_radiance;
+	NSMutableArray	*	m_data;
+	float				m_sumIntensity;
 }
 
 @property(nonatomic, assign)	int						width;

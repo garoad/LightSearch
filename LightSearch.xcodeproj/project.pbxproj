@@ -34,9 +34,9 @@
 		436E269D1917A42D004D4B03 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 436E26981917A42D004D4B03 /* Shader.fsh */; };
 		436E269E1917A42D004D4B03 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 436E26991917A42D004D4B03 /* Shader.vsh */; };
 		436E26A41917A9F2004D4B03 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436E26A31917A9F2004D4B03 /* opencv2.framework */; };
-		43F7A3CB1918D7E200C7FD4F /* LightSamplingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F7A3C91918D7E200C7FD4F /* LightSamplingViewController.m */; };
+		43E2C2D619210070003B5E33 /* hdr1.png in Resources */ = {isa = PBXBuildFile; fileRef = 43E2C2D519210070003B5E33 /* hdr1.png */; };
+		43F7A3CB1918D7E200C7FD4F /* LightSamplingViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 43F7A3C91918D7E200C7FD4F /* LightSamplingViewController.mm */; };
 		43F7A3CC1918D7E200C7FD4F /* LightSamplingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43F7A3CA1918D7E200C7FD4F /* LightSamplingViewController.xib */; };
-		43F7A3CF1918D7FC00C7FD4F /* hdr1.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 43F7A3CD1918D7FC00C7FD4F /* hdr1.bmp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,10 +84,10 @@
 		436E26991917A42D004D4B03 /* Shader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.vsh; sourceTree = "<group>"; };
 		436E26A11917A475004D4B03 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		436E26A31917A9F2004D4B03 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		43E2C2D519210070003B5E33 /* hdr1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hdr1.png; sourceTree = "<group>"; };
 		43F7A3C81918D7E200C7FD4F /* LightSamplingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LightSamplingViewController.h; path = LightSampling/LightSamplingViewController.h; sourceTree = "<group>"; };
-		43F7A3C91918D7E200C7FD4F /* LightSamplingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LightSamplingViewController.m; path = LightSampling/LightSamplingViewController.m; sourceTree = "<group>"; };
+		43F7A3C91918D7E200C7FD4F /* LightSamplingViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LightSamplingViewController.mm; path = LightSampling/LightSamplingViewController.mm; sourceTree = "<group>"; };
 		43F7A3CA1918D7E200C7FD4F /* LightSamplingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LightSamplingViewController.xib; path = LightSampling/LightSamplingViewController.xib; sourceTree = "<group>"; };
-		43F7A3CD1918D7FC00C7FD4F /* hdr1.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = hdr1.bmp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,7 +197,7 @@
 				436E26711917A3BF004D4B03 /* InfoPlist.strings */,
 				436E26741917A3BF004D4B03 /* main.m */,
 				436E26761917A3BF004D4B03 /* LightSearch-Prefix.pch */,
-				43F7A3CD1918D7FC00C7FD4F /* hdr1.bmp */,
+				43E2C2D519210070003B5E33 /* hdr1.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -233,7 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				43F7A3C81918D7E200C7FD4F /* LightSamplingViewController.h */,
-				43F7A3C91918D7E200C7FD4F /* LightSamplingViewController.m */,
+				43F7A3C91918D7E200C7FD4F /* LightSamplingViewController.mm */,
 				43F7A3CA1918D7E200C7FD4F /* LightSamplingViewController.xib */,
 			);
 			name = LightSampling;
@@ -316,11 +316,11 @@
 			files = (
 				431468D3191BBF0500F09310 /* ViewController.xib in Resources */,
 				43F7A3CC1918D7E200C7FD4F /* LightSamplingViewController.xib in Resources */,
+				43E2C2D619210070003B5E33 /* hdr1.png in Resources */,
 				436E269E1917A42D004D4B03 /* Shader.vsh in Resources */,
 				436E269D1917A42D004D4B03 /* Shader.fsh in Resources */,
 				436E26731917A3BF004D4B03 /* InfoPlist.strings in Resources */,
 				436E267B1917A3BF004D4B03 /* Images.xcassets in Resources */,
-				43F7A3CF1918D7FC00C7FD4F /* hdr1.bmp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,7 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				431468D4191BC18400F09310 /* ViewController.m in Sources */,
-				43F7A3CB1918D7E200C7FD4F /* LightSamplingViewController.m in Sources */,
+				43F7A3CB1918D7E200C7FD4F /* LightSamplingViewController.mm in Sources */,
 				431468DB191BC3E200F09310 /* Penrose.mm in Sources */,
 				436E26791917A3BF004D4B03 /* AppDelegate.m in Sources */,
 				436E26751917A3BF004D4B03 /* main.m in Sources */,

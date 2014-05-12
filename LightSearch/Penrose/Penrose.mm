@@ -8,6 +8,12 @@
 
 #import "Penrose.h"
 
+@implementation Radiance
+
+@synthesize R, G, B, Intensity;
+
+@end
+
 @implementation Point2DWrapped
 
 - (void)setX:(double)x
@@ -81,16 +87,21 @@
 	_width = w;
 	_height = h;
 	
+	NSInteger pixels = _width * _height;
+	
+	m_radiance = [NSMutableArray new];
+	m_data = [NSMutableArray new];
+	
 	unsigned char *ladybugData = src;
-	int pixels = _width * _height;
 	
 	int RGBSize = 3;
 	
 	for(int i=0; i<pixels; i++)
 	{
-		((Radiance *)[m_radiance objectAtIndex:i]).B = (float)ladybugData[i*RGBSize+0];
-		((Radiance *)[m_radiance objectAtIndex:i]).G = (float)ladybugData[i*RGBSize+1];
-		((Radiance *)[m_radiance objectAtIndex:i]).R = (float)ladybugData[i*RGBSize+2];
+		Radiance * radiance = [Radiance new];
+		radiance.B = (float)ladybugData[i*RGBSize+0];
+		radiance.G = (float)ladybugData[i*RGBSize+1];
+		radiance.R = (float)ladybugData[i*RGBSize+2];
 		
 		//max = 22026.465795 - exp(10);
 		
@@ -98,29 +109,32 @@
 		//m_radiance[i].Intensity = (m_radiance[i].R*0.222 + m_radiance[i].G*0.707 + m_radiance[i].B*0.071) * weight;
 		
 		// greyscale변환
-		((Radiance *)[m_radiance objectAtIndex:i]).Intensity = (((int)((Radiance *)[m_radiance objectAtIndex:i]).R >> 16 & 0xff) + ((int)((Radiance *)[m_radiance objectAtIndex:i]).B >> 8 & 0xff) + ((int)((Radiance *)[m_radiance objectAtIndex:i]).G & 0xff));
+		radiance.Intensity = ((int)radiance.R >> 16 & 0xff) + ((int)radiance.B >> 8 & 0xff) + ((int)radiance.G & 0xff);
 		
 		//radiance exp함수 매핑
-		m_data[i] = exp((float)((Radiance *)[m_radiance objectAtIndex:i]).Intensity * 0.0390625);
+		float tempValue = exp((float)radiance.Intensity * 0.0390625);
 		
 		//광원 아님 - exp(0) ~ exp(3)
-		if(m_data[i] < 20.085537 ){
-			dst[i*3 + 0] = (float)m_data[i] * 12.74548;
+		if(tempValue < 20.085537 ){
+			dst[i*3 + 0] = (float)tempValue * 12.74548;
 			dst[i*3 + 1] = 0;
 			dst[i*3 + 2] = 0;
 		}
 		//반사광 : exp(4) ~ exp(7)
-		else if(m_data[i] >= 20.085537 && m_data[i] < 1096.633158 ){
+		else if(tempValue >= 20.085537 && tempValue < 1096.633158 ){
 			dst[i*3 + 0] = 0;
-			dst[i*3 + 1] = (float)m_data[i] * 0.2334417;
+			dst[i*3 + 1] = tempValue * 0.2334417;
 			dst[i*3 + 2] = 0;
 		}
 		//주광 : exp(8) ~ exp(10)
-		else if(m_data[i] >= 1096.633158 && m_data[i] <= 28103.083928){
+		else if(tempValue >= 1096.633158 && tempValue <= 28103.083928){
 			dst[i*3 + 0] = 0;
 			dst[i*3 + 1] = 0;
-			dst[i*3 + 2] = (float)m_data[i] * 0.00910932;
+			dst[i*3 + 2] = tempValue * 0.00910932;
 		}
+		
+		[m_radiance addObject:radiance];
+		[m_data addObject:[NSNumber numberWithFloat:tempValue]];
 	}
 }
 
@@ -136,7 +150,7 @@
 	
 	int x, y = 0;
 	
-	if([_sampledPoints count] != 0)
+	if([_sampledPoints count] > 0 || _sampledPoints == nil)
 		_sampledPoints = [NSMutableArray new];
 	
 	for(int i=0; i<numWidth; i++){
@@ -157,7 +171,7 @@
 			//m_sampledPoints.push_back(tempPoint);
 			//printf("%f ", m_data[y * m_width + x]);
 			
-			float temp = m_data[y * _width + x];
+			float temp = [((NSNumber *)[m_data objectAtIndex:(y * _width + x)]) floatValue];
 			//광원 아님 - exp(0) ~ exp(3)
 			if( temp < 20.085537 ){
 				//do nothing
@@ -207,7 +221,7 @@
 
 - (void)mergeSampledPoints:(float)minDistance
 {
-	if([_mergedPoints count] != 0)
+	if([_mergedPoints count] > 0 || _mergedPoints == nil)
 		_mergedPoints = [NSMutableArray new];
 	
 	Point2DWrapped	*	curPt;
@@ -248,7 +262,7 @@
 	}
 	
 	//final points
-	if ([_points count] != 0)
+	if ([_points count] != 0 || _points == nil)
 		_points = [NSMutableArray new];
 	
 	for (int i=0; i<[_mergedPoints count]; i++)
