@@ -49,6 +49,8 @@
 @property(nonatomic, strong)	NSMutableArray		*	mergedPoints;
 @property(nonatomic, assign)	IplImage			*	sourceImage;
 
+- (void)samplingWithIplImage:(IplImage *)orgImage andDistImage:(IplImage *)dstImage;
+- (void)drawSamplePoints:(IplImage *)image;
 - (void)setRadianceMapWithEXP:(int)w height:(int)h source:(unsigned char *)src dist:(unsigned char *)dst;
 - (void)gridSampling:(int)numWidth height:(int) numHeight;
 - (void)mergeSampledPoints:(float)minDistance;

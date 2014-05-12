@@ -81,34 +81,6 @@
     return ret;
 }
 
-- (void)drawSamplePoints:(IplImage *)image withPenrose:(Penrose *)penrose
-{
-	
-	NSInteger numPoint1 = [penrose.sampledPoints count];
-	NSInteger numPoint = [penrose.points count];
-	NSLog(@"Sampled : %d\n", numPoint1);
-	NSLog(@"Merged : %d\n", numPoint);
-
-	int x, y;
-	
-	for (NSInteger i=0; i<numPoint1; i++)
-	{
-		Point2DWrapped * point = [penrose.sampledPoints objectAtIndex:i];
-		x = point.x;
-		y = point.y;
-		
-		cvCircle(image, cvPoint(x,y), 1, cvScalar(0,0,255));
-	}
-	
-	for (NSInteger i=0; i<numPoint; i++)
-	{
-		Point2DWrapped * point = [penrose.points objectAtIndex:i];
-		x = point.x;
-		y = point.y;
-		
-		cvCircle(image, cvPoint(x,y), 2, cvScalar(0,255,0));
-	}
-}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -130,12 +102,10 @@
 	[super viewWillAppear:animated];
 	UIImage * orgImage = [UIImage imageNamed:@"hdr1.png"];
 	IplImage * sourceImage = [self IplImageFromUIImage:orgImage];
-	IplImage * radianImage = cvCreateImage(cvSize(sourceImage->width, sourceImage->height), IPL_DEPTH_8U, 3);
+	IplImage * radianceImage = nil;
 	Penrose * penrose = [Penrose new];
-	[penrose setRadianceMapWithEXP:sourceImage->width height:sourceImage->height source:(unsigned char*)sourceImage->imageData dist:(unsigned char*)radianImage->imageData];
-	[penrose gridSampling:91 height:45];
-	[penrose mergeSampledPoints:40.0];
-	[self drawSamplePoints:sourceImage withPenrose:penrose];
+	[penrose samplingWithIplImage:sourceImage andDistImage:radianceImage];
+	[penrose drawSamplePoints:sourceImage];
 	self.resultImageView.image = [self UIImageFromIplImage:sourceImage];
 }
 
