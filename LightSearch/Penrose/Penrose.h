@@ -10,6 +10,8 @@
 #import <opencv2/highgui/ios.h>
 #include "quasisampler_prototype.h"
 
+using namespace cv;
+
 @interface Radiance : NSObject
 
 @property(nonatomic, assign)	float	R;
@@ -50,7 +52,9 @@
 @property(nonatomic, assign)	IplImage			*	sourceImage;
 
 - (void)samplingWithIplImage:(IplImage *)orgImage andDistImage:(IplImage *)dstImage;
+- (void)samplingWithMat:(Mat&)orgImage andDistMat:(Mat&)dstImage;
 - (void)drawSamplePoints:(IplImage *)image;
+- (void)drawSamplePointsMat:(Mat&)image;
 - (void)setRadianceMapWithEXP:(int)w height:(int)h source:(unsigned char *)src dist:(unsigned char *)dst;
 - (void)gridSampling:(int)numWidth height:(int) numHeight;
 - (void)mergeSampledPoints:(float)minDistance;

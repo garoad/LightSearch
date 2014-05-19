@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "LightSamplingViewController.h"
+#import "CamSearchViewController.h"
 
 @implementation AppDelegate
 
@@ -18,8 +19,15 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
 //    self.window.rootViewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+	
+#if TARGET_IPHONE_SIMULATOR
+	/* 시뮬레이터에서 사용할 코드 */
 	self.window.rootViewController = [[LightSamplingViewController alloc] initWithNibName:@"LightSamplingViewController" bundle:nil];
-    [self.window makeKeyAndVisible];
+#else
+	/* 실제 기기에서 사용할 코드 */
+	self.window.rootViewController = [[CamSearchViewController alloc] initWithNibName:@"CamSearchViewController" bundle:nil];
+#endif
+	[self.window makeKeyAndVisible];
     return YES;
 }
 

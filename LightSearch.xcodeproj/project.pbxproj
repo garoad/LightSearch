@@ -19,12 +19,13 @@
 		431468D5191BC29B00F09310 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436E26A11917A475004D4B03 /* GLKit.framework */; };
 		431468DB191BC3E200F09310 /* Penrose.mm in Sources */ = {isa = PBXBuildFile; fileRef = 431468D8191BC3E200F09310 /* Penrose.mm */; };
 		431468DC191BC3E200F09310 /* quasisampler_prototype.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 431468D9191BC3E200F09310 /* quasisampler_prototype.cpp */; };
+		431FCC72192A2C3500335B6F /* UIImage+CV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 431FCC71192A2C3500335B6F /* UIImage+CV.mm */; };
 		436E26691917A3BF004D4B03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436E26681917A3BF004D4B03 /* Foundation.framework */; };
 		436E266B1917A3BF004D4B03 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436E266A1917A3BF004D4B03 /* CoreGraphics.framework */; };
 		436E266D1917A3BF004D4B03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436E266C1917A3BF004D4B03 /* UIKit.framework */; };
 		436E26731917A3BF004D4B03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 436E26711917A3BF004D4B03 /* InfoPlist.strings */; };
 		436E26751917A3BF004D4B03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 436E26741917A3BF004D4B03 /* main.m */; };
-		436E26791917A3BF004D4B03 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 436E26781917A3BF004D4B03 /* AppDelegate.m */; };
+		436E26791917A3BF004D4B03 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 436E26781917A3BF004D4B03 /* AppDelegate.mm */; };
 		436E267B1917A3BF004D4B03 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 436E267A1917A3BF004D4B03 /* Images.xcassets */; };
 		436E26821917A3BF004D4B03 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436E26811917A3BF004D4B03 /* XCTest.framework */; };
 		436E26831917A3BF004D4B03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436E26681917A3BF004D4B03 /* Foundation.framework */; };
@@ -34,6 +35,8 @@
 		436E269D1917A42D004D4B03 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 436E26981917A42D004D4B03 /* Shader.fsh */; };
 		436E269E1917A42D004D4B03 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 436E26991917A42D004D4B03 /* Shader.vsh */; };
 		436E26A41917A9F2004D4B03 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436E26A31917A9F2004D4B03 /* opencv2.framework */; };
+		439193BF19287B7E006A5141 /* CamSearchViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 439193BE19287B7E006A5141 /* CamSearchViewController.mm */; };
+		439193C119287B98006A5141 /* CamSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 439193C019287B98006A5141 /* CamSearchViewController.xib */; };
 		43E2C2D619210070003B5E33 /* hdr1.png in Resources */ = {isa = PBXBuildFile; fileRef = 43E2C2D519210070003B5E33 /* hdr1.png */; };
 		43F7A3CB1918D7E200C7FD4F /* LightSamplingViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 43F7A3C91918D7E200C7FD4F /* LightSamplingViewController.mm */; };
 		43F7A3CC1918D7E200C7FD4F /* LightSamplingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43F7A3CA1918D7E200C7FD4F /* LightSamplingViewController.xib */; };
@@ -64,6 +67,8 @@
 		431468D8191BC3E200F09310 /* Penrose.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Penrose.mm; sourceTree = "<group>"; };
 		431468D9191BC3E200F09310 /* quasisampler_prototype.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = quasisampler_prototype.cpp; sourceTree = "<group>"; };
 		431468DA191BC3E200F09310 /* quasisampler_prototype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = quasisampler_prototype.h; sourceTree = "<group>"; };
+		431FCC70192A2C3500335B6F /* UIImage+CV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CV.h"; sourceTree = "<group>"; };
+		431FCC71192A2C3500335B6F /* UIImage+CV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImage+CV.mm"; sourceTree = "<group>"; };
 		436E26651917A3BF004D4B03 /* LightSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LightSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		436E26681917A3BF004D4B03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		436E266A1917A3BF004D4B03 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -73,7 +78,7 @@
 		436E26741917A3BF004D4B03 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		436E26761917A3BF004D4B03 /* LightSearch-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LightSearch-Prefix.pch"; sourceTree = "<group>"; };
 		436E26771917A3BF004D4B03 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		436E26781917A3BF004D4B03 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		436E26781917A3BF004D4B03 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		436E267A1917A3BF004D4B03 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		436E26801917A3BF004D4B03 /* LightSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LightSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		436E26811917A3BF004D4B03 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -84,6 +89,9 @@
 		436E26991917A42D004D4B03 /* Shader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.vsh; sourceTree = "<group>"; };
 		436E26A11917A475004D4B03 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		436E26A31917A9F2004D4B03 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		439193BD19287B7E006A5141 /* CamSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CamSearchViewController.h; path = LightSampling/CamSearchViewController.h; sourceTree = "<group>"; };
+		439193BE19287B7E006A5141 /* CamSearchViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CamSearchViewController.mm; path = LightSampling/CamSearchViewController.mm; sourceTree = "<group>"; };
+		439193C019287B98006A5141 /* CamSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CamSearchViewController.xib; path = LightSampling/CamSearchViewController.xib; sourceTree = "<group>"; };
 		43E2C2D519210070003B5E33 /* hdr1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hdr1.png; sourceTree = "<group>"; };
 		43F7A3C81918D7E200C7FD4F /* LightSamplingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LightSamplingViewController.h; path = LightSampling/LightSamplingViewController.h; sourceTree = "<group>"; };
 		43F7A3C91918D7E200C7FD4F /* LightSamplingViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LightSamplingViewController.mm; path = LightSampling/LightSamplingViewController.mm; sourceTree = "<group>"; };
@@ -179,8 +187,10 @@
 				431468D6191BC3E200F09310 /* Penrose */,
 				43F7A3C71918D7BB00C7FD4F /* LightSampling */,
 				436E26971917A42D004D4B03 /* Shaders */,
+				431FCC70192A2C3500335B6F /* UIImage+CV.h */,
+				431FCC71192A2C3500335B6F /* UIImage+CV.mm */,
 				436E26771917A3BF004D4B03 /* AppDelegate.h */,
-				436E26781917A3BF004D4B03 /* AppDelegate.m */,
+				436E26781917A3BF004D4B03 /* AppDelegate.mm */,
 				431468CF191BBF0500F09310 /* ViewController.h */,
 				431468D0191BBF0500F09310 /* ViewController.m */,
 				431468D1191BBF0500F09310 /* ViewController.xib */,
@@ -235,6 +245,9 @@
 				43F7A3C81918D7E200C7FD4F /* LightSamplingViewController.h */,
 				43F7A3C91918D7E200C7FD4F /* LightSamplingViewController.mm */,
 				43F7A3CA1918D7E200C7FD4F /* LightSamplingViewController.xib */,
+				439193BD19287B7E006A5141 /* CamSearchViewController.h */,
+				439193BE19287B7E006A5141 /* CamSearchViewController.mm */,
+				439193C019287B98006A5141 /* CamSearchViewController.xib */,
 			);
 			name = LightSampling;
 			sourceTree = "<group>";
@@ -316,6 +329,7 @@
 			files = (
 				431468D3191BBF0500F09310 /* ViewController.xib in Resources */,
 				43F7A3CC1918D7E200C7FD4F /* LightSamplingViewController.xib in Resources */,
+				439193C119287B98006A5141 /* CamSearchViewController.xib in Resources */,
 				43E2C2D619210070003B5E33 /* hdr1.png in Resources */,
 				436E269E1917A42D004D4B03 /* Shader.vsh in Resources */,
 				436E269D1917A42D004D4B03 /* Shader.fsh in Resources */,
@@ -342,7 +356,9 @@
 				431468D4191BC18400F09310 /* ViewController.m in Sources */,
 				43F7A3CB1918D7E200C7FD4F /* LightSamplingViewController.mm in Sources */,
 				431468DB191BC3E200F09310 /* Penrose.mm in Sources */,
-				436E26791917A3BF004D4B03 /* AppDelegate.m in Sources */,
+				431FCC72192A2C3500335B6F /* UIImage+CV.mm in Sources */,
+				436E26791917A3BF004D4B03 /* AppDelegate.mm in Sources */,
+				439193BF19287B7E006A5141 /* CamSearchViewController.mm in Sources */,
 				436E26751917A3BF004D4B03 /* main.m in Sources */,
 				431468DC191BC3E200F09310 /* quasisampler_prototype.cpp in Sources */,
 			);

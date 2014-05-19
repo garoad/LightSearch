@@ -304,10 +304,47 @@
 	}
 }
 
+
+- (void)drawSamplePointsMat:(Mat&)image
+{
+	NSInteger numPoint1 = [self.sampledPoints count];
+	NSInteger numPoint = [self.points count];
+	NSLog(@"Sampled : %d\n", numPoint1);
+	NSLog(@"Merged : %d\n", numPoint);
+	
+	int x, y;
+	
+	for (NSInteger i=0; i<numPoint1; i++)
+	{
+		Point2DWrapped * point = [self.sampledPoints objectAtIndex:i];
+		x = point.x;
+		y = point.y;
+		
+		circle(image, cvPoint(x,y), 1, cvScalar(0,0,255));
+	}
+	
+	for (NSInteger i=0; i<numPoint; i++)
+	{
+		Point2DWrapped * point = [self.points objectAtIndex:i];
+		x = point.x;
+		y = point.y;
+		
+		circle(image, cvPoint(x,y), 2, cvScalar(0,255,0));
+	}
+}
+
 - (void)samplingWithIplImage:(IplImage *)orgImage andDistImage:(IplImage *)dstImage
 {
 	dstImage = cvCreateImage(cvSize(orgImage->width, orgImage->height), IPL_DEPTH_8U, 3);
 	[self setRadianceMapWithEXP:orgImage->width height:orgImage->height source:(unsigned char*)orgImage->imageData dist:(unsigned char*)dstImage->imageData];
+	[self gridSampling:91 height:45];
+	[self mergeSampledPoints:40.0];
+}
+
+- (void)samplingWithMat:(Mat&)orgImage andDistMat:(Mat&)dstImage
+{
+	dstImage = orgImage.clone();
+	[self setRadianceMapWithEXP:orgImage.cols height:orgImage.rows source:orgImage.data dist:dstImage.data];
 	[self gridSampling:91 height:45];
 	[self mergeSampledPoints:40.0];
 }
