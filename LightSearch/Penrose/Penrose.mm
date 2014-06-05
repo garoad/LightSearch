@@ -12,6 +12,7 @@
 
 @synthesize R, G, B, Intensity;
 
+
 @end
 
 @implementation Point2DWrapped
@@ -76,6 +77,11 @@
 	return self;
 }
 
+- (void)dealloc
+{
+	delete _point2d;
+}
+
 @end
 
 @implementation Penrose
@@ -89,8 +95,18 @@
 	
 	NSInteger pixels = _width * _height;
 	
+	if (m_radiance != nil)
+	{
+		[m_radiance removeAllObjects];
+		m_radiance = nil;
+	}
+	if (m_data != nil)
+	{
+		free(m_data);
+		m_data = nil;
+	}
 	m_radiance = [NSMutableArray new];
-	m_data = [NSMutableArray new];
+	m_data = (float *)malloc(sizeof(float) * pixels);
 	
 	unsigned char *ladybugData = src;
 	
@@ -98,7 +114,7 @@
 	
 	for(int i=0; i<pixels; i++)
 	{
-		Radiance * radiance = [Radiance new];
+		Radiance * radiance = [[Radiance alloc] init];
 		radiance.B = (float)ladybugData[i*RGBSize+0];
 		radiance.G = (float)ladybugData[i*RGBSize+1];
 		radiance.R = (float)ladybugData[i*RGBSize+2];
@@ -134,7 +150,7 @@
 		}
 		
 		[m_radiance addObject:radiance];
-		[m_data addObject:[NSNumber numberWithFloat:tempValue]];
+		m_data[i] = tempValue;
 	}
 }
 
@@ -150,8 +166,13 @@
 	
 	int x, y = 0;
 	
-	if([_sampledPoints count] > 0 || _sampledPoints == nil)
-		_sampledPoints = [NSMutableArray new];
+	if(_sampledPoints != nil)
+	{
+		[_sampledPoints removeAllObjects];
+		_sampledPoints = nil;
+	}
+		
+	_sampledPoints = [NSMutableArray new];
 	
 	for(int i=0; i<numWidth; i++){
 		for(int j = 0; j<numHeight; j++){
@@ -171,7 +192,7 @@
 			//m_sampledPoints.push_back(tempPoint);
 			//printf("%f ", m_data[y * m_width + x]);
 			
-			float temp = [((NSNumber *)[m_data objectAtIndex:(y * _width + x)]) floatValue];
+			float temp = m_data[y * _width + x];
 			//광원 아님 - exp(0) ~ exp(3)
 			if( temp < 20.085537 ){
 				//do nothing
@@ -221,8 +242,12 @@
 
 - (void)mergeSampledPoints:(float)minDistance
 {
-	if([_mergedPoints count] > 0 || _mergedPoints == nil)
-		_mergedPoints = [NSMutableArray new];
+	if (_mergedPoints != nil)
+	{
+		[_mergedPoints removeAllObjects];
+		_mergedPoints = nil;
+	}
+	_mergedPoints = [NSMutableArray new];
 	
 	Point2DWrapped	*	curPt;
 	Point2DWrapped	*	curMergePt;
@@ -262,14 +287,18 @@
 	}
 	
 	//final points
-	if ([_points count] != 0 || _points == nil)
-		_points = [NSMutableArray new];
+	if (_points != nil)
+	{
+		[_points removeAllObjects];
+		_points = nil;
+	}
+	_points = [NSMutableArray new];
 	
 	for (int i=0; i<[_mergedPoints count]; i++)
 	{
 		curPt = [_mergedPoints objectAtIndex:i];
 		
-		if (curPt.count >= 3)
+		if (curPt.count >= 20)
 			[_points addObject:curPt];
 	}
 }
@@ -335,7 +364,6 @@
 
 - (void)samplingWithIplImage:(IplImage *)orgImage andDistImage:(IplImage *)dstImage
 {
-	dstImage = cvCreateImage(cvSize(orgImage->width, orgImage->height), IPL_DEPTH_8U, 3);
 	[self setRadianceMapWithEXP:orgImage->width height:orgImage->height source:(unsigned char*)orgImage->imageData dist:(unsigned char*)dstImage->imageData];
 	[self gridSampling:91 height:45];
 	[self mergeSampledPoints:40.0];

@@ -12,5 +12,7 @@
 
 + (IplImage *)IplImageFromUIImage:(UIImage *)image;
 + (UIImage *)UIImageFromIplImage:(IplImage *)image;
++ (UIImage *)imageWithCVMat:(const cv::Mat&)cvMat;
++ (cv::Mat)cvMatWithImage:(UIImage *)image;
 
 @end

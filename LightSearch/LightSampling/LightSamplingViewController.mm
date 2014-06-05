@@ -39,11 +39,11 @@
 	NSTimeInterval startTime = [NSDate timeIntervalSinceReferenceDate];
 	UIImage * orgImage = [UIImage imageNamed:@"hdr1.png"];
 	IplImage * sourceImage = [UIImage IplImageFromUIImage:orgImage];
-	IplImage * radianceImage = nil;
+	IplImage * radianceImage = cvCreateImage(cvSize(sourceImage->width, sourceImage->height), IPL_DEPTH_8U, 3);
 	Penrose * penrose = [Penrose new];
 	[penrose samplingWithIplImage:sourceImage andDistImage:radianceImage];
 	[penrose drawSamplePoints:sourceImage];
-	self.resultImageView.image = [UIImage UIImageFromIplImage:sourceImage];
+	self.resultImageView.image = [UIImage UIImageFromIplImage:radianceImage];
 	NSTimeInterval endTime = [NSDate timeIntervalSinceReferenceDate];
 	NSLog(@"FPS : %.1f", 1 / (endTime - startTime));
 

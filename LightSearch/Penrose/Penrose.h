@@ -14,10 +14,10 @@ using namespace cv;
 
 @interface Radiance : NSObject
 
-@property(nonatomic, assign)	float	R;
-@property(nonatomic, assign)	float	G;
-@property(nonatomic, assign)	float	B;
-@property(nonatomic, assign)	float	Intensity;
+@property(nonatomic)	float	R;
+@property(nonatomic)	float	G;
+@property(nonatomic)	float	B;
+@property(nonatomic)	float	Intensity;
 
 @end
 
@@ -40,7 +40,8 @@ using namespace cv;
 @interface Penrose : NSObject
 {
 	NSMutableArray	*	m_radiance;
-	NSMutableArray	*	m_data;
+//	NSMutableArray	*	m_data;
+	float			*	m_data;
 	float				m_sumIntensity;
 }
 

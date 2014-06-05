@@ -17,6 +17,7 @@ using namespace cv;
 }
 
 @property(nonatomic, strong) IBOutlet UIImageView		*	imageView;
+@property(nonatomic, strong) IBOutlet UIImageView		*	subImgView;
 @property(nonatomic, strong) IBOutlet UILabel			*	fpsLabel;
 @property(nonatomic, strong)		  CvVideoCamera		*	videoCamera;
 
